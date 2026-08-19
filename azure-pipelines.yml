@@ -8,7 +8,7 @@ pool:
 
 
 variables:
-- group: New variable group 18-Dec
+- group: var
 
   
 steps:
