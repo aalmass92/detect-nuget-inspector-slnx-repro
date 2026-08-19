@@ -1,0 +1,25 @@
+trigger:
+  - main
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+
+
+variables:
+- group: New variable group 18-Dec
+
+  
+steps:
+- task: BlackDuckSecurityScan@2
+  displayName: 'Polaris Scan'
+  inputs:
+    POLARIS_SERVER_URL: $(POLARIS_SERVER_URL)
+    POLARIS_ACCESS_TOKEN: $(POLARIS_ACCESS_TOKEN)
+    POLARIS_ASSESSMENT_TYPES: 'SCA'
+    POLARIS_APPLICATION_NAME:  almass
+    POLARIS_PROJECT_NAME: ahmed2
+    polaris.onboarding: true
+    POLARIS_TEST_SCA_TYPE: 'SCA-PACKAGE'
+    INCLUDE_DIAGNOSTICS: true
